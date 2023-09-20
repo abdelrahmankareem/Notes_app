@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:notes/Views/constants.dart';
 
@@ -14,7 +12,7 @@ class CustomTextField extends StatelessWidget {
       cursorColor: KPrimaryColor,
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: TextStyle(color: KPrimaryColor),
+        hintStyle: const TextStyle(color: KPrimaryColor),
         border: BuildBorder(),
         enabledBorder: BuildBorder(),
         focusedBorder: BuildBorder(KPrimaryColor),
