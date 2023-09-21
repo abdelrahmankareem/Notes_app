@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomSerachIcon extends StatelessWidget {
-  const CustomSerachIcon({super.key});
-
+  const CustomSerachIcon({super.key, required this.icon});
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,7 +12,7 @@ class CustomSerachIcon extends StatelessWidget {
         color: Colors.white.withOpacity(.05),
         borderRadius: BorderRadius.circular(16),
       ),
-      child: const Center(child: Icon(Icons.search)),
+      child: Center(child: Icon(icon)),
     );
   }
 }
