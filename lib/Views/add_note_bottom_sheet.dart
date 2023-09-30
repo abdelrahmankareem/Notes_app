@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:notes/Views/Widgets/add_note_form.dart';
 import 'package:notes/cubit/add_note_cubit/add_note_cubit.dart';
+import 'package:notes/cubit/notes_cubit/notes_cubit.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
@@ -18,6 +19,7 @@ class AddNoteBottomSheet extends StatelessWidget {
         }
         if (state is AddNoteSuccess) {
           Navigator.pop(context);
+          BlocProvider.of<NotesCubit>(context).fetchAllNotes();
         }
       }, builder: (context, state) {
         return AbsorbPointer(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomSerachIcon extends StatelessWidget {
-  const CustomSerachIcon({super.key, required this.icon});
+  const CustomSerachIcon(
+      {super.key, required this.icon, required this.onPressed});
   final IconData icon;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,7 +14,11 @@ class CustomSerachIcon extends StatelessWidget {
         color: Colors.white.withOpacity(.05),
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Center(child: Icon(icon)),
+      child: Center(
+          child: IconButton(
+        icon: Icon(icon),
+        onPressed: onPressed,
+      )),
     );
   }
 }
