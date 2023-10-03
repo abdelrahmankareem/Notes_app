@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes/Views/Widgets/color_list_view.dart';
 import 'package:notes/Views/custom_button.dart';
 import 'package:notes/Views/custom_text_field.dart';
 import 'package:notes/cubit/add_note_cubit/add_note_cubit.dart';
@@ -49,6 +50,9 @@ class _FormAddNoteState extends State<FormAddNote> {
             hint: "content",
             maxline: 5,
           ),
+          const SizedBox(
+            height: 32,
+          ),
           const ColorListView(),
           const SizedBox(
             height: 16,
@@ -83,35 +87,6 @@ class _FormAddNoteState extends State<FormAddNote> {
           )
         ],
       ),
-    );
-  }
-}
-
-class ColorItem extends StatelessWidget {
-  const ColorItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const CircleAvatar(
-      backgroundColor: Colors.blue,
-      radius: 38,
-    );
-  }
-}
-
-class ColorListView extends StatelessWidget {
-  const ColorListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 38 * 2,
-      child: ListView.builder(
-          itemCount: 10,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return ColorItem();
-          }),
     );
   }
 }
